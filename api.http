@@ -1,0 +1,18 @@
+# Access token
+POST http://localhost:8080/realms/master/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+username=admin
+&password=admin
+&grant_type=password
+&client_id=admin-cli
+
+# Access token and id token
+POST http://localhost:8080/realms/master/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+username=admin
+&password=admin
+&grant_type=password
+&client_id=admin-cli
+&scoped=openid
