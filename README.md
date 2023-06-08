@@ -24,6 +24,10 @@ Test Keycloak with earlier version
 >
 > ```npm install @types/express --save-dev```
 >
+> ```npm install @types/express-session --save-dev```
+>
+> ```npm install @types/jsonwebtoken --save-dev```
+>
 > ```npm install ts-node --save-dev```
 
 ### RUN
