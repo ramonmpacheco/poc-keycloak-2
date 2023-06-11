@@ -32,3 +32,12 @@ Test Keycloak with earlier version
 
 ### RUN
 > ```npm run authorization-code```
+
+### IMPLICIT FLOW
+> ```npm create vite```
+> ```npm run implicit```
+> ```npm install react-router-dom -w implicit-flow```
+> ```npm install js-cookie -w implicit-flow```
+> ```npm install @types/js-cookie -w implicit-flow```
+> ```npm install jose -w implicit-flow```
+> enable implicit flow option on keycloak admin painel (client)

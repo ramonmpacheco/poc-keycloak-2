@@ -2,6 +2,7 @@ import express from 'express';
 import session from 'express-session';
 import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
+import e from 'express';
 
 const app = express();
 
@@ -47,6 +48,19 @@ app.get('/login', (req, res) => {
         state
     });
     const url = `http://localhost:8080/realms/master/protocol/openid-connect/auth?${loginParams.toString()}`;
+    res.redirect(url);
+});
+
+app.get("/logout", (req, res) => {
+    const logoutParams = new URLSearchParams({
+        //@ts-expect-error
+        id_token_hint: req.session.id_token,
+        post_logout_redirect_uri: "http://localhost:3000/login",
+    });
+    req.session.destroy((err) => {
+        console.log(err);
+    });
+    const url = `http://localhost:8080/realms/master/protocol/openid-connect/logout?${logoutParams.toString()}`;
     res.redirect(url);
 });
 
